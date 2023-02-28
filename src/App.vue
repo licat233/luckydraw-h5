@@ -459,9 +459,6 @@ export default {
         if (!Array.isArray(data)) {
           throw new Error("數據格式錯誤");
         }
-        if (data.length === 0) {
-          return
-        }
         const awards = []
         data.forEach((item, index) => {
           awards.push(item.award)
