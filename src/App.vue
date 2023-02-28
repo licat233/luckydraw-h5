@@ -44,14 +44,6 @@ img {
   align-items: center;
 }
 
-.content {
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: column; */
-}
-
 .lucky {
   width: 100%;
   /* height: calc(100% * 1951 / 1080);
@@ -104,13 +96,6 @@ img {
   width: 100%;
   height: 100%;
   padding: 0 10px;
-}
-
-.layout {
-  /* display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 50px auto 50px;
-  grid-row-gap: 50px; */
 }
 
 .footer {
