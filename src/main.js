@@ -18,9 +18,10 @@ app.config.errorHandler = (err, instance, info) => {
    // 向追踪服务报告错误
    console.error(err, instance, info)
 }
-app.config.globalProperties.activityUuid = "1376ba46-c178-4baa-aab7-be6420b37bc1"
+app.config.globalProperties.campaignUuid = "f2b0f6ff-bcbc-4298-a15e-386e82e2d261"
 if (process.env.NODE_ENV === 'development') {
-   app.config.globalProperties.baseUrl = "http://127.0.0.1:7878"
+   // app.config.globalProperties.baseUrl = "http://127.0.0.1:7878"
+   app.config.globalProperties.baseUrl = "http://api.lzy.pub"
 } else if (process.env.NODE_ENV === 'production') {
    app.config.globalProperties.baseUrl = "."
 }

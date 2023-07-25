@@ -29,7 +29,7 @@ defineProps({
 }
 
 .prize-show-item div strong {
-    color: var(--font-color);
+    color: var(--main-color);
     font-size: 18px;
 }
 
@@ -44,6 +44,7 @@ defineProps({
     border-right: 1px solid #dad4d4;
     width: 100px;
     height: 100px;
+    padding: 10px;
 }
 
 .prize-show-item>div:first-child img {
@@ -58,8 +59,7 @@ defineProps({
 
 <template>
     <div class="prize-show-item" v-for="award in awards">
-        <div><img :src=award.image :alt=award.name>
-        </div>
+        <div><img :src=award.image :alt=award.name /></div>
         <div>
             <strong>{{ award.grade }} ({{ award.price }} NT$)</strong>
             <p>{{ award.name }}</p>

@@ -1,7 +1,7 @@
 <style>
 :root {
   --max-width: 900px;
-  --main-color: #9e7de8;
+  --main-color: #f53338;
 }
 
 html,
@@ -17,20 +17,14 @@ img {
 }
 
 .component_dialog {
-  background-image: linear-gradient(315deg, #cfd4ff, #f8efff) !important;
+  background-image: linear-gradient(226deg, #d1fbfc, #f1dffd) !important;
   border-radius: 10px !important;
   overflow: hidden;
 }
 
-.component_dialog_bd {
-  color: #680d78 !important;
-}
-
-
 .component_btn {
   cursor: pointer;
   user-select: none;
-  color: #0094fd !important;
 }
 
 
@@ -39,7 +33,6 @@ img {
   margin: 0 auto;
   max-width: var(--max-width);
   background-color: #bf2ff5;
-  background-image: url(https://img.alicdn.com/imgextra/i2/917298378/O1CN01xLUmZm2BlB6HEf6pJ_!!917298378.png);
 }
 
 .header {
@@ -77,8 +70,6 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 10px;
-  box-sizing: border-box;
 }
 
 .lucky-bottom {
@@ -86,8 +77,6 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 40px;
-  width: 100%;
 }
 
 .luckypanel {
@@ -96,6 +85,7 @@ img {
 
 .description {
   width: 100%;
+  background-image: linear-gradient(180deg, #cb59f4 0%, #bf2ff5 100%);
 }
 
 .description div {
@@ -135,11 +125,10 @@ img {
   box-sizing: border-box;
   width: 100%;
   background-color: #fff;
-  background-image: linear-gradient(315deg, #e3e0ff, #ffffff);
+  background-image: linear-gradient(226deg, #d1fbfc, #f1dffd);
   padding: 10px;
   border-radius: 15px;
   margin-bottom: 15px;
-  min-height: 80px;
 }
 
 .card-box>p {
@@ -176,43 +165,6 @@ img {
 }
 </style>
 
-<style scoped>
-.falling-image {
-  transform: translateY(-100%);
-  animation: fall 1.5s ease-in 1s forwards;
-}
-
-@keyframes fall {
-  0% {
-    transform: translateY(-100%);
-  }
-
-  50% {
-    transform: translateY(30%);
-  }
-
-  60% {
-    transform: translateY(-10%);
-  }
-
-  70% {
-    transform: translateY(20%);
-  }
-
-  80% {
-    transform: translateY(-5%);
-  }
-
-  90% {
-    transform: translateY(10%);
-  }
-
-  100% {
-    transform: translateY(0%);
-  }
-}
-</style>
-
 <script setup>
 import PrizesShow from './components/PrizesShow.vue'
 </script>
@@ -223,28 +175,29 @@ import PrizesShow from './components/PrizesShow.vue'
       <div class="content">
         <div class="lucky" ref="luckyRef" :style="luckyStyle">
           <div class="lucky-top">
-            <img :src="imageSrc" :class="{ 'falling-image': animate }" @load="handleImageLoad" alt="">
+            <img src="https://img.alicdn.com/imgextra/i2/917298378/O1CN01E1wJ5F2BlB3ShRI0R_!!917298378.jpg" alt="">
           </div>
           <div class="lucky-center">
-            <img src="https://img.alicdn.com/imgextra/i2/917298378/O1CN01jbE9Bq2BlB6QEhjGv_!!917298378.png" alt="">
+            <img src="https://img.alicdn.com/imgextra/i2/917298378/O1CN01l6AskQ2BlB3OsUWPo_!!917298378.jpg" alt="">
             <div class="luckypanel" ref="luckypanel">
-              <LuckyWheel ref="myLucky" :width="310" :height="310" :prizes="prizes" :blocks="blocks" :buttons="buttons"
+              <LuckyWheel ref="myLucky" :width="260" :height="260" :prizes="prizes" :blocks="blocks" :buttons="buttons"
                 @start="startCallback" @end="endCallback" />
             </div>
-          </div>
-          <div class="lucky-bottom">
             <div class="count-box">
               <p class="count">還剩 {{ count }} 次抽獎機會</p>
             </div>
           </div>
+          <div class="lucky-bottom">
+            <img src="https://img.alicdn.com/imgextra/i4/917298378/O1CN01M3Ry5Z2BlB3MeRPzv_!!917298378.jpg" alt="">
+          </div>
         </div>
         <div class="description">
           <div class="description-content">
-            <div class="card-title">•● 活動獎品 ●•</div>
+            <div class="card-title">•● 獎品展示 ●•</div>
             <div class="card-box">
               <PrizesShow :awards="awards" />
             </div>
-            <div class="card-title">•● 我的獎品 ●•</div>
+            <div class="card-title">•● 中獎記錄 ●•</div>
             <div class="card-box">
               <PrizesShow :awards="myAwards" />
             </div>
@@ -275,8 +228,6 @@ let initWidth = Math.round(swidth * 26 / 39);
 export default {
   data() {
     return {
-      imageSrc: "https://img.alicdn.com/imgextra/i4/917298378/O1CN01i4KjCD2BlB6LpIfud_!!917298378.png",
-      animate: false, // 是否执行动画
       blocks: [
         { padding: '0', background: '#f4b6f5' }
       ],
@@ -285,11 +236,11 @@ export default {
         {
           radius: '50%',
           imgs: [{
-            src: "https://img.alicdn.com/imgextra/i4/917298378/O1CN01Xv6sxX2BlB6Lo3oHl_!!917298378.png",
-            width: '50%',
-            top: '-80%'
+            src: "https://img.alicdn.com/imgextra/i1/917298378/O1CN01zP5hZC2BlB3P616Mj_!!917298378.png",
+            width: '55%',
+            top: '-60%'
           }],
-          fonts: [{ text: '開始', top: '-10px', fontColor: '#fff', fontSize: '18px' }],
+          fonts: [{ text: '開始', top: '-10px', fontColor: '#fff', fontSize: '20px' }],
           pointer: true,
         },
       ],
@@ -354,16 +305,18 @@ export default {
       return Math.round(width * 26 / 39);
     },
     checkColor(index) {
-      let color = "#f2e8fe";
       switch (index % 2) {
         case 0:
-          color = "#f2e8fe";
-          break;
+          return "#fffdef"
+        case 1:
+          return "#fef3d3"
+        case 2:
+          return "#fffdef"
+        case 3:
+          return "#fffffc"
         default:
-          color = "#ffffff";
-          break;
+          return "#fffffc"
       }
-      return color;
     },
     // 点击抽奖按钮会触发star回调
     startCallback() {
@@ -472,7 +425,7 @@ export default {
               {
                 text: item.grade,
                 top: '5px',
-                fontColor: "#7a4ae6",
+                fontColor: "#f43437",
                 // fontSize: this.prizeFontSize,
                 fontSize: "16px",
               }
@@ -486,7 +439,6 @@ export default {
                 height: "60px",
                 // top: this.prizeWidth / 2,
                 top: "25px",
-                rotate: true,
               }
             ]
           }
@@ -539,10 +491,7 @@ export default {
       }).catch(err => {
         this.showAlert(err)
       })
-    },
-    handleImageLoad() {
-      this.animate = true; // 图片加载完成后触发动画
-    },
+    }
   }
 }
 </script>

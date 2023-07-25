@@ -7,8 +7,7 @@ defineProps({
 })
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
 
 <template>
     <div class="prize-show-item" v-for="award in awards">
